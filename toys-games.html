@@ -3,25 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NEUCART - Electronics Store | Smartphones, Laptops, TVs & More</title>
+    <title>NEUCART - Toys & Games Store | Action Figures, Board Games, LEGO & More</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* Electronics Page Specific Styles */
-        .electronics-header {
+        /* Toys & Games Page Specific Styles */
+        .toys-header {
             background-color: var(--black);
             padding: 30px 20px;
             text-align: center;
             margin-bottom: 30px;
         }
         
-        .electronics-header h1 {
+        .toys-header h1 {
             font-size: clamp(1.5rem, 3vw, 2.5rem);
             margin-bottom: 15px;
             color: var(--primary-color);
         }
         
-        .electronics-header p {
+        .toys-header p {
             max-width: 700px;
             margin: 0 auto;
             color: var(--text-dark);
@@ -85,7 +85,7 @@
             color: var(--black);
         }
         
-        .electronics-grid {
+        .toys-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
             gap: 25px;
@@ -94,7 +94,7 @@
             margin: 0 auto;
         }
         
-        .electronics-card {
+        .toys-card {
             background-color: var(--medium-gray);
             border-radius: var(--border-radius);
             overflow: hidden;
@@ -104,7 +104,7 @@
             flex-direction: column;
         }
         
-        .electronics-card:hover {
+        .toys-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
         }
@@ -229,14 +229,14 @@
         
         /* Responsive adjustments */
         @media (max-width: 1200px) {
-            .electronics-grid {
+            .toys-grid {
                 grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
                 gap: 20px;
             }
         }
         
         @media (max-width: 768px) {
-            .electronics-grid {
+            .toys-grid {
                 grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
                 gap: 15px;
             }
@@ -248,13 +248,13 @@
         }
         
         @media (max-width: 576px) {
-            .electronics-grid {
+            .toys-grid {
                 grid-template-columns: repeat(2, 1fr);
                 gap: 12px;
                 padding: 0 10px;
             }
             
-            .electronics-header {
+            .toys-header {
                 padding: 20px 15px;
             }
             
@@ -277,7 +277,7 @@
         }
         
         @media (max-width: 400px) {
-            .electronics-grid {
+            .toys-grid {
                 grid-template-columns: 1fr;
             }
         }
@@ -346,6 +346,7 @@
         </div>
     </nav>
 
+
     <!-- Category Navigation -->
     <div class="category-nav">
         <div class="category-item"><a href="electronics.html">Electronics</a></div>
@@ -358,28 +359,28 @@
         <div class="category-item"><a href="groceries.html">Groceries</a></div>
     </div>
 
-    <!-- Electronics Header -->
-    <div class="electronics-header">
-        <h1>Electronics Store</h1>
-        <p>Discover the latest gadgets, smartphones, laptops, TVs, and more at unbeatable prices. Shop now for the best deals in electronics.</p>
+    <!-- Toys & Games Header -->
+    <div class="toys-header">
+        <h1>Toys & Games Store</h1>
+        <p>Discover the best toys, games, action figures, LEGO sets, and more for kids of all ages. Fun, learning, and entertainment for everyone!</p>
     </div>
 
     <!-- Search and Tags Section -->
     <div class="search-tags-container">
         <div class="search-box">
-            <input type="text" class="search-input" placeholder="Search for electronics products..." id="searchInput">
+            <input type="text" class="search-input" placeholder="Search for toys & games..." id="searchInput">
             <button class="search-button" id="searchButton">Search</button>
         </div>
         <div class="tags-container" id="tagsContainer">
             <div class="tag active" data-tag="all">All</div>
-            <div class="tag" data-tag="smartphone">Smartphones</div>
-            <div class="tag" data-tag="laptop">Laptops</div>
-            <div class="tag" data-tag="headphone">Headphones</div>
+            <div class="tag" data-tag="lego">LEGO</div>
+            <div class="tag" data-tag="boardgame">Board Games</div>
+            <div class="tag" data-tag="actionfigure">Action Figures</div>
         </div>
     </div>
 
-    <!-- Electronics Products Grid -->
-    <div class="electronics-grid" id="productsGrid">
+    <!-- Toys & Games Products Grid -->
+    <div class="toys-grid" id="productsGrid">
         <!-- Products will be loaded here dynamically -->
     </div>
 
@@ -392,7 +393,6 @@
 
 
     <script>
-
         // Mobile menu toggle
 document.addEventListener('DOMContentLoaded', function () {
     const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
@@ -402,7 +402,6 @@ document.addEventListener('DOMContentLoaded', function () {
         categoryNav.classList.toggle('mobile-visible');
     });
 });
-
 
 
         // Sample electronics products data

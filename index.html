@@ -62,12 +62,18 @@
             background: #ddd;
         }
     </style>
-    <script>
-         document.addEventListener("DOMContentLoaded", function () {
-        let link = document.getElementById("electronics-link");
-        link.href = "electronics.html"; // Ensures correct navigation
-      });
-    </script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    document.querySelector("#electronics-link a").href = "electronics.html";
+    document.querySelector("#fashion-link a").href = "fashion.html";
+    document.querySelector("#home-kitchen-link a").href = "home-kitchen.html";
+    document.querySelector("#beauty-link a").href = "beauty.html";
+    document.querySelector("#books-link a").href = "books.html";
+    document.querySelector("#toys-games-link a").href = "toys-games.html";
+    document.querySelector("#sports-link a").href = "sports.html";
+    document.querySelector("#groceries-link a").href = "groceries.html";
+  });
+</script>
 </head>
 <body>
     <!-- Navigation Bar -->
@@ -107,13 +113,13 @@
     <!-- Category Navigation -->
     <div class="category-nav">
         <div class="category-item" id="electronics-link"><a href="electronics.html">Electronics</a></div>
-        <div class="category-item"><a href="">Fashion</a></div>
-        <div class="category-item"><a href="">Home & Kitchen</a></div>
-        <div class="category-item"><a href="">Beauty</a></div>
-        <div class="category-item"><a href="">Books</a></div>
-        <div class="category-item"><a href="">Toys & Games</a></div>
-        <div class="category-item"><a href="">Sports</a></div>
-        <div class="category-item"><a href="">Groceries</a></div>
+<div class="category-item" id="fashion-link"><a href="fashion.html">Fashion</a></div>
+<div class="category-item" id="home-kitchen-link"><a href="home-kitchen.html">Home & Kitchen</a></div>
+<div class="category-item" id="beauty-link"><a href="beauty.html">Beauty</a></div>
+<div class="category-item" id="toys-games-link"><a href="toys-games.html">Toys & Games</a></div>
+<div class="category-item" id="sports-link"><a href="sports.html">Sports</a></div>
+<div class="category-item" id="groceries-link"><a href="groceries.html">Groceries</a></div>
+
     </div>
 
     <!-- Hero Slider -->
