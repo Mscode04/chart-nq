@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - NEUCART</title>
+       <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #3de100;
+            --primary-dark: #2bb000;
+            --primary-light: #a0ff72;
+            --black: #000000;
+            --dark-gray: #222222;
+            --medium-gray: #d7d7d7;
+            --light-gray: #f5f5f5;
+            --white: #ffffff;
+            --text-color: #333333;
+            --text-dark: #1a1a1a;
+            --text-light: #666666;
+            --shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+            --shadow-hover: 0 8px 32px rgba(0, 0, 0, 0.12);
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            --border-radius: 12px;
+            --max-width: 1200px;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light-gray);
+            color: var(--text-color);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        /* Contact Page Header */
+        .contact-header {
+            background: linear-gradient(135deg, var(--black) 0%, var(--dark-gray) 100%);
+            color: var(--white);
+            padding: 80px 20px;
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .contact-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 50%, rgba(61, 225, 0, 0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        
+        .contact-header h1 {
+            font-size: 2.75rem;
+            margin-bottom: 20px;
+            color: var(--white);
+            font-weight: 700;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .contact-header p {
+            max-width: 700px;
+            margin: 0 auto;
+            color: var(--medium-gray);
+            font-size: 1.1rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .highlight {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+        
+        /* Contact Container */
+        .contact-container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 20px 60px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        /* Contact Card */
+        .contact-card {
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            padding: 40px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            text-align: left;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(0, 0, 0, 0.03);
+        }
+        
+        .contact-card::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color) 0%, var(--primary-light) 100%);
+            transition: var(--transition);
+            transform: scaleX(0);
+            transform-origin: left;
+        }
+        
+        .contact-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-hover);
+        }
+        
+        .contact-card:hover::after {
+            transform: scaleX(1);
+        }
+        
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 25px;
+            color: var(--black);
+            font-size: 1.5rem;
+            box-shadow: 0 4px 12px rgba(61, 225, 0, 0.2);
+        }
+        
+        .contact-card h2 {
+            margin-bottom: 20px;
+            color: var(--text-dark);
+            font-weight: 600;
+            font-size: 1.5rem;
+        }
+        
+        .contact-card p {
+            color: var(--text-light);
+            margin-bottom: 25px;
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+        
+        .contact-info {
+            margin: 20px 0;
+            width: 100%;
+        }
+        
+        .contact-info-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+        
+        .contact-info-item i {
+            margin-right: 12px;
+            color: var(--primary-color);
+            font-size: 1.1rem;
+            margin-top: 3px;
+        }
+        
+        .contact-info-item span {
+            color: var(--text-color);
+            font-size: 0.95rem;
+        }
+        
+        .contact-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 24px;
+            background-color: var(--primary-color);
+            color: var(--black);
+            text-decoration: none;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            transition: var(--transition);
+            margin-top: 10px;
+            border: none;
+            cursor: pointer;
+            font-size: 0.95rem;
+            box-shadow: 0 4px 12px rgba(61, 225, 0, 0.2);
+        }
+        
+        .contact-button i {
+            margin-right: 8px;
+        }
+        
+        .contact-button:hover {
+            background-color: var(--primary-dark);
+            color: var(--white);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(61, 225, 0, 0.3);
+        }
+        
+        /* Contact Form Card */
+        .contact-form-card {
+            grid-column: 1 / -1;
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            padding: 40px;
+            box-shadow: var(--shadow);
+        }
+        
+        .contact-form-card h2 {
+            margin-bottom: 25px;
+            color: var(--text-dark);
+            font-weight: 600;
+            font-size: 1.75rem;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--text-dark);
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid var(--medium-gray);
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(61, 225, 0, 0.1);
+        }
+        
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        /* Policy Links */
+        .policy-links {
+            text-align: center;
+            margin: 60px 0 40px;
+            padding: 20px 0;
+            border-top: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        
+        .policy-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 500;
+            transition: var(--transition);
+            font-size: 0.9rem;
+        }
+        
+        .policy-links a:hover {
+            color: var(--primary-color);
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .contact-header {
+                padding: 60px 20px;
+            }
+            
+            .contact-header h1 {
+                font-size: 2.25rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-header {
+                padding: 50px 20px;
+                margin-bottom: 40px;
+            }
+            
+            .contact-header h1 {
+                font-size: 2rem;
+            }
+            
+            .contact-header p {
+                font-size: 1rem;
+            }
+            
+            .contact-card {
+                padding: 30px;
+            }
+            
+            .policy-links {
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
+            }
+            
+            .policy-links a {
+                margin: 4px 0;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .contact-header h1 {
+                font-size: 1.75rem;
+            }
+            
+            .contact-card {
+                padding: 25px;
+            }
+            
+            .contact-card h2 {
+                font-size: 1.3rem;
+            }
+            
+            .contact-button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+        <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="mobile-menu-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+        <div class="nav-logo">
+            <a href="index.html" class="logo"><img src="Assets/img/logo.jpg" alt=""></a>
+        </div>
+        <div class="nav-search">
+            <!-- <select class="search-select">
+                <option>All Categories</option>
+                <option>Electronics</option>
+                <option>Fashion</option>
+                <option>Home & Kitchen</option>
+                <option>Beauty</option>
+                <option>Books</option>
+            </select> -->
+            <!-- <input type="text" placeholder="Search for products, brands and more" class="search-input">
+            <button class="search-button">
+                <i class="fas fa-search"></i>
+            </button> -->
+        </div>
+        <div class="nav-actions">
+            <!-- <div class="action-item">
+                <i class="fas fa-user"></i>
+                <span>Account</span>
+            </div> -->
+            <div class="action-item">
+                
+                <span>Your Trusted Shopping Partner</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Category Navigation -->
+    <div class="category-nav">
+        <div class="category-item"><a href="index.html">Home</a></div>
+        <div class="category-item"><a href="electronics.html">Electronics</a></div>
+        <div class="category-item"><a href="fashion.html">Fashion</a></div>
+        <div class="category-item"><a href="home-kitchen.html">Home & Kitchen</a></div>
+        <div class="category-item"><a href="beauty.html">Beauty</a></div>
+        <div class="category-item"><a href="toys-games.html">Toys</a></div>
+        <div class="category-item"><a href="sports.html">Sports</a></div>
+        <div class="category-item"><a href="groceries.html">Groceries</a></div>
+        <div class="category-item"><a href="contact.html">Contact</a></div>
+    </div>
+    <!-- Contact Header -->
+    <div class="contact-header">
+        <h1>Get in <span class="highlight">Touch</span> with NEUCART</h1>
+        <p>Our dedicated support team is ready to assist you with any questions about our products, services, or your shopping experience.</p>
+    </div>
+
+    <!-- Contact Container -->
+    <div class="contact-container">
+        <!-- Amazon Support Card -->
+        <div class="contact-card">
+            <div class="contact-icon">
+                <i class="fas fa-shopping-cart"></i>
+            </div>
+            <h2>Order & Delivery Support</h2>
+            <p>For questions about products, orders, shipping, or returns, please contact Amazon directly as we fulfill through Amazon's network.</p>
+            <div class="contact-info">
+                <div class="contact-info-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <span>Amazon Customer Service: 1800-3000-9009</span>
+                </div>
+                <div class="contact-info-item">
+                    <i class="fas fa-globe"></i>
+                    <span>Available 24/7 through Amazon's support channels</span>
+                </div>
+            </div>
+            <a href="https://www.amazon.in/gp/help/customer/display.html" class="contact-button" target="_blank">
+                <i class="fas fa-external-link-alt"></i> Visit Amazon Help
+            </a>
+        </div>
+
+        <!-- NEUCART Support Card -->
+        <div class="contact-card">
+            <div class="contact-icon">
+                <i class="fas fa-headset"></i>
+            </div>
+            <h2>NEUCART Customer Care</h2>
+            <p>For issues with the NEUCART platform, account problems, or feedback about our service, our team is ready to assist you.</p>
+            <div class="contact-info">
+                <div class="contact-info-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <span>Direct Helpline: +91 81579 80307</span>
+                </div>
+                <div class="contact-info-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>Email: help@neuraq.in</span>
+                </div>
+                <div class="contact-info-item">
+                    <i class="fas fa-clock"></i>
+                    <span>Support Hours: Mon-Sun, 9:00 AM - 9:00 PM IST</span>
+                </div>
+            </div>
+            <button class="contact-button" onclick="window.location.href='mailto:help@neuraq.in'">
+                <i class="fas fa-paper-plane"></i> Send Us an Email
+            </button>
+        </div>
+
+        <!-- Business Inquiries Card -->
+        <div class="contact-card">
+            <div class="contact-icon">
+                <i class="fas fa-handshake"></i>
+            </div>
+            <h2>Business Inquiries</h2>
+            <p>For partnership opportunities, wholesale inquiries, or other business-related questions, please contact our business team.</p>
+            <div class="contact-info">
+                <div class="contact-info-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>hello@neuraq.in</span>
+                </div>
+                <div class="contact-info-item">
+                    <i class="fas fa-clock"></i>
+                    <span>Business Hours: Mon-Fri, 10:00 AM - 6:00 PM IST</span>
+                </div>
+            </div>
+            <button class="contact-button" onclick="window.location.href='mailto:business@neuraq.in'">
+                <i class="fas fa-briefcase"></i> Contact Business Team
+            </button>
+        </div>
+    </div>
+
+    <!-- Contact Form Section -->
+    <div class="contact-container">
+        <div class="contact-form-card">
+            <h2>Send Us a Message</h2>
+            <form id="contactForm">
+                <div class="form-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px;">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" class="form-control" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Your Message</label>
+                    <textarea id="message" class="form-control" required></textarea>
+                </div>
+                <button type="submit" class="contact-button" style="margin-top: 10px;">
+                    <i class="fas fa-paper-plane"></i> Send Message
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Policy Links -->
+    <div class="policy-links">
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="terms-conditions.html">Terms & Conditions</a>
+        <a href="return-policy.html">Return Policy</a>
+        <a href="shipping-policy.html">Shipping Policy</a>
+        <a href="faq.html">FAQs</a>
+    </div>
+
+    <script>
+        // Form submission handler
+      document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    // Get form values
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const subject = document.getElementById('subject').value.trim();
+    const message = document.getElementById('message').value.trim();
+
+    // Format WhatsApp message
+    const whatsappMessage = `*New Contact Form Submission*%0A%0A*Name:* ${name}%0A*Email:* ${email}%0A*Subject:* ${subject}%0A*Message:* ${message}`;
+
+    // WhatsApp API link
+    const whatsappNumber = '918089124307'; // Country code + number (91 for India)
+    const whatsappURL = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
+
+    // Open WhatsApp
+    window.open(whatsappURL, '_blank');
+
+    // Reset form
+    this.reset();
+});
+
+    </script>
+    <script>
+        // Mobile menu toggle
+document.addEventListener('DOMContentLoaded', function () {
+    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+    const categoryNav = document.querySelector('.category-nav');
+
+    mobileMenuToggle.addEventListener('click', function () {
+        categoryNav.classList.toggle('mobile-visible');
+    });
+});
+
+    </script>
+</body>
+</html>
