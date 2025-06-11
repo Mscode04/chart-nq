@@ -62,6 +62,12 @@
             background: #ddd;
         }
     </style>
+    <script>
+         document.addEventListener("DOMContentLoaded", function () {
+        let link = document.getElementById("electronics-link");
+        link.href = "electronics.html"; // Ensures correct navigation
+      });
+    </script>
 </head>
 <body>
     <!-- Navigation Bar -->
@@ -100,14 +106,14 @@
 
     <!-- Category Navigation -->
     <div class="category-nav">
-        <div class="category-item">Electronics</div>
-        <div class="category-item">Fashion</div>
-        <div class="category-item">Home & Kitchen</div>
-        <div class="category-item">Beauty</div>
-        <div class="category-item">Books</div>
-        <div class="category-item">Toys & Games</div>
-        <div class="category-item">Sports</div>
-        <div class="category-item">Groceries</div>
+        <div class="category-item" id="electronics-link"><a href="electronics.html">Electronics</a></div>
+        <div class="category-item"><a href="">Fashion</a></div>
+        <div class="category-item"><a href="">Home & Kitchen</a></div>
+        <div class="category-item"><a href="">Beauty</a></div>
+        <div class="category-item"><a href="">Books</a></div>
+        <div class="category-item"><a href="">Toys & Games</a></div>
+        <div class="category-item"><a href="">Sports</a></div>
+        <div class="category-item"><a href="">Groceries</a></div>
     </div>
 
     <!-- Hero Slider -->
